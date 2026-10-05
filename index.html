@@ -561,7 +561,7 @@ let x = 0, extra = 0, ultimoY = scrollY, antes = performance.now();
 const BASE = 55; // px por segundo
 addEventListener('scroll', () => { extra = Math.min(extra + Math.abs(scrollY - ultimoY) * 6, 900); ultimoY = scrollY; }, { passive: true });
 (function anda(agora) {
-  const dt = Math.min((agora - antes) / 1000, 0.05) || 0;
+  const dt = Math.max(0, Math.min((agora - antes) / 1000, 0.05)) || 0; // o 1º quadro pode vir com horário anterior
   antes = agora;
   x -= (BASE + extra) * dt;
   extra *= 0.94;
