@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rodrigo Mantega · DJ de casamentos e eventos exclusivos</title>
+<meta name="description" content="Rodrigo Mantega, DJ de casamentos e eventos exclusivos em São Paulo. 25 anos de pista, Rock in Rio, The Town, Fórmula 1 e Bridal Guide da Constance Zahn. Destination wedding em 8 países.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a121b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rodrigo Mantega · DJ de casamentos e eventos exclusivos">
+<meta property="og:description" content="25 anos de pista. Casamentos, destination weddings e eventos exclusivos.">
+<meta property="og:url" content="https://rodrigo.rkperformance.com.br/">
+<meta property="og:image" content="https://rodrigo.rkperformance.com.br/media/og-compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rodrigo Mantega, DJ de casamentos e eventos exclusivos">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rodrigo.rkperformance.com.br/">
+<link rel="icon" href="media/marca/monograma-rm.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a121b; --bg-2:#0f1a26; --navy:#1f3a52; --gold:#daa540; --gold-2:#f0c879;
+  --ink:#f3ede2; --muted:#93a0ad; --line:rgba(243,237,226,.14);
+  --sans:"Archivo",system-ui,sans-serif; --serif:"Newsreader",Georgia,serif;
+  --pad:clamp(20px,5vw,72px); --max:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+b.hl{font-weight:650;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;font-size:.92em}
+
+/* grão de filme */
+.grain{position:fixed;inset:-50%;pointer-events:none;z-index:60;opacity:.12;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grao 1.2s steps(6) infinite}
+@keyframes grao{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* topo */
+.topo{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:14px var(--pad);transition:background .4s,backdrop-filter .4s}
+.topo.solido{background:rgba(10,18,27,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topo .marca{display:flex;align-items:center;gap:12px}
+.topo .marca img:first-child{width:34px;height:34px}
+.topo .marca img:last-child{height:26px;width:auto;opacity:0;transform:translateY(4px);transition:.4s}
+.topo.solido .marca img:last-child{opacity:1;transform:none}
+.capsula{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--gold);border-radius:999px;
+  padding:10px 12px 10px 20px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .3s,color .3s}
+.capsula i{width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--bg);display:grid;place-items:center;font-style:normal;transition:transform .35s}
+.capsula:hover{background:var(--gold);color:var(--bg)}
+.capsula:hover i{background:var(--bg);color:var(--gold);transform:rotate(-45deg)}
+.capsula.cheia{background:var(--gold);color:var(--bg)}
+.capsula.cheia i{background:var(--bg);color:var(--gold)}
+.capsula.fantasma{border-color:var(--line)}
+.capsula.fantasma i{background:transparent;border:1px solid var(--line);color:var(--ink)}
+
+/* rótulo no esquema "eventos sociais / MARCAS" */
+.rotulo{display:flex;flex-direction:column;line-height:1;margin-bottom:28px}
+.rotulo .pre{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,1.6vw,22px);color:var(--gold);margin-bottom:8px}
+.rotulo .tit{font-weight:800;font-stretch:125%;font-size:clamp(34px,4.4vw,64px);letter-spacing:.01em;text-transform:uppercase}
+
+.cont{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+/* abertura */
+.abertura{position:relative;min-height:100svh;display:grid;grid-template-columns:5fr 6fr;align-items:center;gap:clamp(24px,4vw,64px);
+  max-width:var(--max);margin:0 auto;padding:110px var(--pad) 60px}
+.abertura .texto{position:relative;z-index:2}
+.abertura .nome{width:min(440px,90%);margin-bottom:26px}
+.abertura .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.abertura .frase{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.18;margin-bottom:30px;max-width:16em}
+.abertura .frase em{color:var(--gold)}
+.selos{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px;list-style:none}
+.selos li{font-size:12px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--ink)}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.abertura .palco{position:relative;justify-self:end;height:min(82svh,820px);aspect-ratio:9/16}
+.abertura .palco .quadro{height:100%}
+.abertura .palco .foto-sobre{position:absolute;left:-34%;bottom:7%;width:48%;aspect-ratio:4/5;border:6px solid var(--bg);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.abertura .palco .foto-sobre img{width:100%;height:100%;object-fit:cover}
+
+/* quadros de mídia */
+.quadro{position:relative;overflow:hidden;background:var(--bg-2);border-radius:4px}
+.quadro.v{aspect-ratio:9/16}
+.quadro.f{aspect-ratio:4/5}
+.quadro video,.quadro img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.quadro:hover img{transform:scale(1.04)}
+.quadro .leg{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:12px;letter-spacing:.06em;
+  background:linear-gradient(transparent,rgba(5,10,16,.85));pointer-events:none}
+.quadro .leg b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:17px;letter-spacing:0}
+.play{position:absolute;top:14px;right:14px;z-index:3;display:flex;align-items:center;gap:8px;border-radius:999px;
+  background:rgba(10,18,27,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 14px 8px 10px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(218,165,64,.5);transition:background .3s}
+.play:hover{background:var(--gold);color:var(--bg)}
+.play svg{width:16px;height:16px}
+.quadro.tocando .leg,.quadro.tocando .play{display:none}
+.fechar{position:absolute;top:12px;right:12px;z-index:4;width:38px;height:38px;border-radius:50%;background:rgba(10,18,27,.8);border:1px solid var(--line);display:none;place-items:center;font-size:18px}
+.quadro.tocando .fechar{display:grid}
+
+/* letreiro */
+.letreiro{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
+.letreiro .faixa{display:inline-flex;will-change:transform}
+.letreiro span{margin-right:40px;font-weight:700;font-stretch:125%;font-size:clamp(15px,1.5vw,20px);letter-spacing:.14em;text-transform:uppercase}
+.letreiro span.p{color:var(--gold);font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:0;font-stretch:100%;text-transform:none;font-size:clamp(18px,1.7vw,24px)}
+
+/* blocos */
+.bloco{display:grid;grid-template-columns:minmax(280px,4fr) 7fr;gap:clamp(32px,6vw,96px);align-items:start;padding:clamp(80px,11vw,150px) 0}
+.bloco + .bloco{border-top:1px solid var(--line)}
+.bloco.inverso{grid-template-columns:7fr minmax(280px,4fr)}
+.bloco.inverso .lado-texto{order:2}
+.lado-texto{position:sticky;top:110px}
+.lado-texto p{color:#d9d3c8;max-width:34em}
+.lado-texto p + p{margin-top:16px}
+.citacao{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.32;color:var(--ink);margin-bottom:24px}
+.citacao::before{content:"“";color:var(--gold)}
+.citacao::after{content:"”";color:var(--gold)}
+.midias{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);align-items:start}
+.midias > :nth-child(2){margin-top:clamp(40px,9vw,140px)}
+.midias.alto > :nth-child(2){margin-top:0}
+.lista-locais{list-style:none;margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.lista-locais li::before{content:"◆";color:var(--gold);font-size:8px;margin-right:8px;vertical-align:middle}
+
+.bandeiras{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;list-style:none}
+.bandeiras li{display:flex;align-items:center;gap:8px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px}
+.bandeiras li img{width:22px;height:15px;object-fit:cover;border-radius:2px}
+
+.marcas{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);margin-top:28px}
+.marcas li{list-style:none;padding:16px 0;border-bottom:1px solid var(--line);font-weight:700;font-stretch:112%;font-size:clamp(17px,1.5vw,21px);letter-spacing:.02em}
+.marcas li:nth-child(odd){padding-right:12px}
+.marcas li small{display:block;font-weight:400;font-stretch:100%;font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:2px}
+
+.lineup{margin-top:24px;font-weight:700;font-stretch:118%;text-transform:uppercase;font-size:clamp(18px,1.9vw,26px);line-height:1.35;letter-spacing:.02em}
+.lineup em{font-style:normal;white-space:nowrap}
+.lineup span{color:var(--muted);font-weight:400;font-family:var(--serif);font-style:italic;text-transform:none;font-stretch:100%;letter-spacing:0}
+
+/* feedbacks em celular */
+.fala{padding:clamp(80px,11vw,150px) 0;border-top:1px solid var(--line)}
+.fala .topo-sec{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+.fala .topo-sec p{max-width:30em;color:#d9d3c8}
+.celulares{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,44px)}
+.celular{position:relative;border-radius:34px;padding:9px;background:#1a2532;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 40px 80px rgba(0,0,0,.45)}
+.celular .quadro{border-radius:26px}
+.celular::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:28%;height:20px;border-radius:999px;background:#0b1118;z-index:5}
+.celular figcaption{margin-top:20px;padding:0 6px}
+.celular figcaption q{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(17px,1.4vw,20px);line-height:1.35;quotes:"“" "”"}
+.celular figcaption q::before,.celular figcaption q::after{color:var(--gold)}
+.celular figcaption span{display:block;margin-top:10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* manifesto */
+.manifesto ol{list-style:none;counter-reset:m;margin-top:8px}
+.manifesto li{counter-increment:m;display:grid;grid-template-columns:44px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line);color:#d9d3c8}
+.manifesto li::before{content:counter(m,decimal-leading-zero);font-weight:700;font-stretch:125%;color:var(--gold);font-size:14px;padding-top:3px}
+.manifesto .abre{font-weight:700;font-stretch:112%;font-size:clamp(22px,2.2vw,30px);line-height:1.22;margin-bottom:18px}
+
+/* música */
+.player{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg-2)}
+.player iframe{display:block;width:100%;height:420px;border:0}
+.faixas{list-style:none;margin-top:22px}
+.faixas li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.faixas li span{color:var(--muted);font-size:13px}
+
+/* agende */
+.agende{position:relative;overflow:hidden;text-align:center;padding:clamp(100px,14vw,190px) var(--pad)}
+.agende::before{content:"";position:absolute;inset:0;background:url(media/marca/padrao-rm.jpg) center/680px auto repeat;opacity:.07}
+.agende::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0,var(--bg) 72%)}
+.agende > *{position:relative;z-index:1}
+.agende .rotulo{align-items:center}
+.agende .rotulo .tit{font-size:clamp(44px,8vw,118px)}
+.agende p{max-width:32em;margin:0 auto 36px;color:#d9d3c8}
+.agende .acoes{justify-content:center}
+.agende .contato{margin-top:30px;font-size:14px;color:var(--muted)}
+.agende .contato a{border-bottom:1px solid var(--line)}
+
+footer{border-top:1px solid var(--line);padding:46px var(--pad) 90px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;max-width:var(--max);margin:0 auto}
+footer .marca{display:flex;align-items:center;gap:14px}
+footer .marca img:first-child{width:44px}
+footer .marca img:last-child{height:34px;width:auto}
+.redes{display:flex;gap:18px;list-style:none;flex-wrap:wrap}
+.redes a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .3s}
+.redes a:hover{color:var(--gold)}
+footer small{width:100%;color:#5f6b78;font-size:12px}
+
+.previa{position:fixed;left:14px;bottom:14px;z-index:55;font-size:11px;letter-spacing:.08em;background:rgba(10,18,27,.86);border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.previa b{color:var(--gold);font-weight:600}
+.previa-rodape{display:none}
+.previa-rodape a{color:var(--gold)}
+
+/* revelação */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}.js .rv.d3{transition-delay:.36s}
+
+/* abertura: entrada */
+.js .abertura .texto > *{opacity:0;transform:translateY(18px);animation:entra 1s cubic-bezier(.2,.7,.2,1) forwards}
+.js .abertura .texto > :nth-child(2){animation-delay:.12s}.js .abertura .texto > :nth-child(3){animation-delay:.24s}
+.js .abertura .texto > :nth-child(4){animation-delay:.36s}.js .abertura .texto > :nth-child(5){animation-delay:.48s}
+.js .abertura .palco{opacity:0;animation:entra 1.4s .2s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes entra{to{opacity:1;transform:none}}
+
+/* celular */
+@media (max-width:900px){
+  .abertura{grid-template-columns:1fr;min-height:100svh;padding:0;align-items:end}
+  .abertura .palco{position:absolute;inset:0;height:100%;width:100%;aspect-ratio:auto}
+  .abertura .palco .quadro{border-radius:0}
+  .abertura .palco .quadro::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,27,.55) 0,rgba(10,18,27,0) 26%,rgba(10,18,27,.15) 45%,rgba(10,18,27,.92) 78%,var(--bg) 100%)}
+  .abertura .palco .foto-sobre{display:none}
+  .abertura .palco .play{top:auto;bottom:calc(100% - 128px);right:var(--pad)}
+  .abertura .texto{padding:0 var(--pad) 34px}
+  .abertura .nome{width:min(250px,70%);margin-bottom:14px}
+  .abertura .kicker{font-size:10.5px;letter-spacing:.16em;margin-bottom:12px}
+  .abertura .frase{font-size:22px;margin-bottom:18px}
+  .selos{gap:6px;margin-bottom:22px}
+  .selos li{font-size:11px;padding:5px 10px}
+  .abertura .acoes{gap:8px}
+  .abertura .capsula{font-size:11px;padding:8px 8px 8px 14px;gap:8px}
+  .abertura .capsula i{width:22px;height:22px}
+  .previa{display:none}
+  .previa-rodape{display:inline}
+  .quadro .leg{padding:30px 10px 10px;font-size:10.5px;letter-spacing:.03em;line-height:1.35}
+  .quadro .leg b{font-size:14px}
+  .play{top:10px;right:10px;padding:6px 10px 6px 8px;font-size:10px}
+  .rotulo{margin-bottom:20px}
+  .lineup{font-size:17px}
+  .bloco,.bloco.inverso{grid-template-columns:1fr;gap:34px}
+  .bloco.inverso .lado-texto{order:0}
+  .lado-texto{position:static}
+  .celulares{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;margin:0 calc(var(--pad) * -1);padding-left:var(--pad);padding-right:var(--pad);scrollbar-width:none}
+  .celulares::-webkit-scrollbar{display:none}
+  .celular{scroll-snap-align:center}
+  .topo .capsula{padding:8px 10px 8px 14px;font-size:11px}
+  .topo .capsula i{width:22px;height:22px}
+  .player iframe{height:360px}
+}
+@media (max-width:520px){
+  .midias{gap:12px}
+  .marcas li{font-size:16px;padding:13px 0}
+  .topo .marca img:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="topo" id="topo" aria-label="Topo">
+  <a class="marca" href="#inicio" aria-label="Rodrigo Mantega, início">
+    <img src="media/marca/monograma-rm.svg" alt="" width="34" height="34">
+    <img src="media/marca/nome-rodrigo-mantega-claro.svg" alt="" width="65" height="26">
+  </a>
+  <a class="capsula" data-whats href="#agende">Agende sua data <i aria-hidden="true">↗</i></a>
+</nav>
+
+<main id="inicio">
+
+<section class="abertura" aria-label="Abertura">
+  <div class="texto">
+    <img class="nome" src="media/marca/nome-rodrigo-mantega-claro.svg" alt="Rodrigo Mantega" width="440" height="175">
+    <p class="kicker">DJ de casamentos &amp; eventos exclusivos</p>
+    <p class="frase">Estilo que se ouve.<br><em>Presença</em> que se sente.</p>
+    <ul class="selos" aria-label="Destaques">
+      <li>25 anos de pista</li><li>Rock in Rio</li><li>The Town</li><li>Fórmula 1</li><li>Bridal Guide Constance Zahn</li>
+    </ul>
+    <div class="acoes">
+      <a class="capsula cheia" data-whats href="#agende">Agende sua data <i aria-hidden="true">↗</i></a>
+      <a class="capsula fantasma" href="#casamentos">Ver casamentos <i aria-hidden="true">↓</i></a>
+    </div>
+  </div>
+  <div class="palco">
+    <div class="quadro" data-cheio="media/videos/filme-abertura.mp4">
+      <video src="media/videos/abertura.mp4" poster="media/videos/abertura.jpg" autoplay muted loop playsinline preload="auto" aria-label="Trechos de casamentos com Rodrigo Mantega na pista"></video>
+      <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Assistir com som</button>
+      <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+    </div>
+    <figure class="foto-sobre"><img src="media/fotos/smoking-cabine.jpg" alt="Rodrigo Mantega de smoking na cabine de DJ" loading="lazy"></figure>
+  </div>
+</section>
+
+<div class="letreiro" aria-hidden="true"><div class="faixa" id="faixa">
+  <span>25 anos de pista</span><span class="p">casamentos</span><span>Rock in Rio</span><span class="p">destination wedding</span><span>The Town</span><span class="p">eventos exclusivos</span><span>Fórmula 1</span><span class="p">corporativos</span><span>Bridal Guide Constance Zahn</span><span class="p">open format</span>
+</div></div>
+
+<div class="cont">
+
+  <!-- SOBRE -->
+  <section class="bloco" id="sobre" aria-labelledby="t-sobre">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-sobre"><span class="pre">sobre</span><span class="tit">Mim</span></h2>
+      <p class="citacao">A música nunca foi só som pra mim. Ela sempre foi sentimento, conexão, verdade. Desde pequeno eu escuto de tudo, sem preconceito, sem vaidade. Apenas sinto.</p>
+      <p>São <b class="hl">25 anos de carreira</b>. Autodidata e <b class="hl">open format</b>, Rodrigo passou pelas pistas dos principais clubs do país e por palcos como Rock in Rio, The Town e Fórmula 1.</p>
+      <p>Hoje o foco é o que ele mais gosta de fazer: <b class="hl">casamentos</b> e eventos exclusivos, com repertório feito para cada festa e leitura de pista do começo ao fim.</p>
+    </div>
+    <div class="midias">
+      <figure class="quadro f rv"><img src="media/fotos/cabine-mao.jpg" alt="Rodrigo Mantega na cabine, com a mão erguida para a pista" loading="lazy"></figure>
+      <figure class="quadro f rv d1"><img src="media/fotos/pb-terno.jpg" alt="Retrato em preto e branco de Rodrigo Mantega de terno" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- CASAMENTOS -->
+  <section class="bloco inverso" id="casamentos" aria-labelledby="t-casa">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-casa"><span class="pre">casamentos</span><span class="tit">Weddings</span></h2>
+      <p>Cada casamento tem uma personalidade própria. O trabalho começa antes da festa, com o casal, e continua na pista: <b class="hl">ler as pessoas</b> e levar a energia certa da entrada até a última música.</p>
+      <p>Integrante do <b class="hl">Bridal Guide da Constance Zahn</b>, com casamentos em lugares como:</p>
+      <ul class="lista-locais">
+        <li>Rosewood São Paulo</li><li>Casa Niemeyer</li><li>Yacht Club</li><li>Fazenda Santa Bárbara</li><li>A Quinta das Amoreiras</li><li>Vila Siriúba, Ilhabela</li>
+      </ul>
+    </div>
+    <div class="midias">
+      <div class="quadro v rv" data-cheio="media/videos/filme-marcella-rafa.mp4">
+        <video src="media/videos/casamento-pista.mp4" poster="media/videos/casamento-pista.jpg" muted loop playsinline preload="none" aria-label="Casamento de Marcella e Rafa"></video>
+        <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver o filme</button>
+        <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+        <p class="leg"><b>Marcella &amp; Rafa</b>A Quinta das Amoreiras · filme de João Tonsig</p>
+      </div>
+      <div class="quadro v rv d1">
+        <video src="media/videos/casamento-bambu.mp4" poster="media/videos/casamento-bambu.jpg" muted loop playsinline preload="none" aria-label="Pista cheia no casamento de Luitha e Artur"></video>
+        <p class="leg"><b>Luitha &amp; Artur</b>pré-wedding e casamento</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATION -->
+  <section class="bloco" id="destination" aria-labelledby="t-dest">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-dest"><span class="pre">destination</span><span class="tit">Wedding</span></h2>
+      <p>Casamentos no Brasil e fora dele, com festas bilíngues que funcionam para as duas famílias. No Yacht Club, a pista de brasileiros e americanos começou às 19h30 e <b class="hl">só parou às 4h</b>.</p>
+      <ul class="bandeiras" aria-label="Países">
+        <li><img src="media/bandeiras/it.png" alt="" width="22" height="15">Itália</li>
+        <li><img src="media/bandeiras/us.png" alt="" width="22" height="15">Estados Unidos</li>
+        <li><img src="media/bandeiras/ar.png" alt="" width="22" height="15">Argentina</li>
+        <li><img src="media/bandeiras/co.png" alt="" width="22" height="15">Colômbia</li>
+        <li><img src="media/bandeiras/uy.png" alt="" width="22" height="15">Uruguai</li>
+        <li><img src="media/bandeiras/do.png" alt="" width="22" height="15">Rep. Dominicana</li>
+        <li><img src="media/bandeiras/mx.png" alt="" width="22" height="15">México</li>
+        <li><img src="media/bandeiras/fr.png" alt="" width="22" height="15">França</li>
+      </ul>
+    </div>
+    <div class="midias">
+      <div class="quadro v rv">
+        <video src="media/videos/destination.mp4" poster="media/videos/destination.jpg" muted loop playsinline preload="none" aria-label="Casamento brasileiro e americano"></video>
+        <p class="leg"><b>Brasil &amp; Estados Unidos</b>casamento bilíngue</p>
+      </div>
+      <figure class="quadro f rv d1"><img src="media/fotos/wedding-day.jpg" alt="Rodrigo Mantega de terno escuro num casamento ao ar livre, entre palmeiras" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- MARCAS -->
+  <section class="bloco inverso" id="marcas" aria-labelledby="t-marcas">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-marcas"><span class="pre">eventos e</span><span class="tit">Marcas</span></h2>
+      <p>Convenções, lançamentos e festas de empresa, com som pensado para o público e para a marca. Na agenda recente:</p>
+      <ul class="marcas">
+        <li>Bradesco<small>Casa Charlô</small></li>
+        <li>P&amp;G<small>Tauá Resorts, Atibaia</small></li>
+        <li>Pernod Ricard<small>Club Med Lake Paradise</small></li>
+        <li>Shopee<small>São Paulo</small></li>
+        <li>Mind The Sec<small>Transamerica Expo Center</small></li>
+        <li>ABRAS<small>Royal Palm, Campinas</small></li>
+      </ul>
+    </div>
+    <div class="midias">
+      <figure class="quadro f rv"><img src="media/fotos/cabine-roxa.jpg" alt="Rodrigo Mantega tocando sob luz roxa" loading="lazy"></figure>
+      <div class="quadro v rv d1">
+        <video src="media/videos/pista-cheia.mp4" poster="media/videos/pista-cheia.jpg" muted loop playsinline preload="none" aria-label="Vista da cabine para uma pista lotada"></video>
+        <p class="leg"><b>Vista da cabine</b>pista lotada</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PALCOS -->
+  <section class="bloco" id="palcos" aria-labelledby="t-palcos">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-palcos"><span class="pre">grandes</span><span class="tit">Palcos</span></h2>
+      <p>Rock in Rio, The Town, Fórmula 1, Camarote Brahma e Champions Club do Allianz Parque. Já dividiu line-up com:</p>
+      <p class="lineup"><em>Paul McCartney</em> <span>·</span> <em>Ed Sheeran</em> <span>·</span> <em>Coldplay</em> <span>·</span> <em>John Mayer</em> <span>·</span> <em>Ariana Grande</em> <span>·</span> <em>Foo Fighters</em> <span>·</span> <em>Bon Jovi</em></p>
+    </div>
+    <div class="midias">
+      <figure class="quadro f rv"><img src="media/fotos/domo.jpg" alt="Nome de Rodrigo Mantega projetado numa cúpula iluminada à noite" loading="lazy"></figure>
+      <figure class="quadro f rv d1"><img src="media/fotos/palco-vermelho.jpg" alt="Rodrigo Mantega num palco com luz vermelha" loading="lazy"></figure>
+    </div>
+  </section>
+
+</div>
+
+<!-- QUEM CONTRATA FALA -->
+<section class="fala" id="fala" aria-labelledby="t-fala">
+  <div class="cont">
+    <div class="topo-sec rv">
+      <h2 class="rotulo" id="t-fala"><span class="pre">quem contrata</span><span class="tit">Fala</span></h2>
+      <p>As mensagens chegam no dia seguinte. Toque em um vídeo para ouvir.</p>
+    </div>
+    <div class="celulares">
+      <figure class="celular rv">
+        <div class="quadro v" data-cheio="media/videos/filme-mariana-luiz.mp4">
+          <video src="media/videos/feedback-mariana.mp4" poster="media/videos/feedback-mariana.jpg" muted loop playsinline preload="none" aria-label="Mensagem da noiva Mariana sobre o casamento"></video>
+          <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ouvir</button>
+          <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+        </div>
+        <figcaption><q>Pista LOTADA do começo ao fim. Nunca vi uma festa acabar e estar lotada ainda!</q><span>Mariana &amp; Luiz · Fazenda Santa Bárbara</span></figcaption>
+      </figure>
+      <figure class="celular rv d1">
+        <div class="quadro v" data-cheio="media/videos/filme-yacht-club.mp4">
+          <video src="media/videos/feedback-andrew.mp4" poster="media/videos/feedback-andrew.jpg" muted loop playsinline preload="none" aria-label="Mensagem de Andrew, noivo americano"></video>
+          <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ouvir</button>
+          <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+        </div>
+        <figcaption><q>Everyone loved your set and you carried us all the way to 4 am.</q><span>Andrew · noivo americano · Yacht Club</span></figcaption>
+      </figure>
+      <figure class="celular rv d2">
+        <div class="quadro v" data-cheio="media/videos/filme-audio-rafa.mp4">
+          <video src="media/videos/feedback-rafa.mp4" poster="media/videos/feedback-rafa.jpg" muted loop playsinline preload="none" aria-label="Áudio do noivo Rafa Cortez agradecendo"></video>
+          <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ouvir o áudio</button>
+          <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+        </div>
+        <figcaption><q>Foi demais! … Parabéns de coração.</q><span>Rafa Cortez · áudio do noivo</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="cont">
+
+  <!-- MANIFESTO -->
+  <section class="bloco inverso manifesto" id="jeito" aria-labelledby="t-jeito">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-jeito"><span class="pre">o jeito de</span><span class="tit">Tocar</span></h2>
+      <p class="abre">Se você vai me contratar apenas pelas músicas, talvez eu não seja o DJ certo pra você.</p>
+      <ol>
+        <li>Porque eu não entrego apenas música. Eu entrego sensação.</li>
+        <li>Porque uma festa elegante precisa de alguém que saiba conduzir energia, não apenas tocar hits.</li>
+        <li>Porque eu entendo que cada casamento tem uma personalidade própria.</li>
+        <li>Porque existem momentos que precisam arrepiar. E eu vivo para criar esses momentos.</li>
+        <li>Porque antes de me contratar como DJ, vocês precisam confiar em mim como responsável pela memória mais importante da noite.</li>
+      </ol>
+    </div>
+    <div class="midias alto">
+      <div class="quadro v rv">
+        <video src="media/videos/like-a-stone.mp4" poster="media/videos/like-a-stone.jpg" muted loop playsinline preload="none" aria-label="Pista cantando Like a Stone num casamento"></video>
+        <p class="leg"><b>“Like a Stone”</b>na hora certa</p>
+      </div>
+      <figure class="quadro f rv d1"><img style="object-position:50% 12%" src="media/fotos/orquideas.jpg" alt="Rodrigo Mantega de terno diante de uma parede de orquídeas brancas" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <section class="bloco" id="musica" aria-labelledby="t-musica">
+    <div class="lado-texto rv">
+      <h2 class="rotulo" id="t-musica"><span class="pre">produção</span><span class="tit">Musical</span></h2>
+      <p>Além da pista, produz remixes e música autoral, lançados nas plataformas digitais.</p>
+      <ul class="faixas">
+        <li>My Love <span>single · Keep Control Records</span></li>
+        <li>It Ain’t Over ’Til It’s Over <span>Lenny Kravitz · remix</span></li>
+        <li>Changes <span>Chris Lake, Laura V · remix</span></li>
+        <li>Chase The Sun <span>Planet Funk · remix</span></li>
+        <li>Summer Eletro Hits <span>sets mixados</span></li>
+      </ul>
+      <div class="acoes" style="margin-top:28px">
+        <a class="capsula fantasma" href="https://soundcloud.com/rodrigomantegadj" target="_blank" rel="noopener">SoundCloud <i aria-hidden="true">↗</i></a>
+        <a class="capsula fantasma" href="https://open.spotify.com/user/rodrigomantegadj" target="_blank" rel="noopener">Spotify <i aria-hidden="true">↗</i></a>
+      </div>
+    </div>
+    <div class="rv d1">
+      <div class="player">
+        <iframe title="Sets e remixes de Rodrigo Mantega no SoundCloud" loading="lazy" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/rodrigomantegadj&amp;color=%23daa540&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;visual=true"></iframe>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- AGENDE -->
+<section class="agende" id="agende" aria-labelledby="t-agende">
+  <h2 class="rotulo rv" id="t-agende"><span class="pre">agende a sua</span><span class="tit">Data</span></h2>
+  <p class="rv d1">Cada proposta é feita para o seu evento: formato, horas de pista e estrutura de som. São Paulo, todo o Brasil e destination weddings.</p>
+  <div class="acoes rv d2">
+    <a class="capsula cheia" data-whats href="#agende">Pedir proposta no WhatsApp <i aria-hidden="true">↗</i></a>
+    <a class="capsula fantasma" href="mailto:contato@rodrigomantega.com.br">contato@rodrigomantega.com.br <i aria-hidden="true">✉</i></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="marca">
+    <img src="media/marca/monograma-rm.svg" alt="" width="44" height="44">
+    <img src="media/marca/nome-rodrigo-mantega-claro.svg" alt="Rodrigo Mantega" width="85" height="34">
+  </div>
+  <ul class="redes">
+    <li><a href="https://www.instagram.com/rodrigomantegadj/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://soundcloud.com/rodrigomantegadj" target="_blank" rel="noopener">SoundCloud</a></li>
+    <li><a href="https://open.spotify.com/user/rodrigomantegadj" target="_blank" rel="noopener">Spotify</a></li>
+    <li><a href="https://www.youtube.com/rodrigomantegadj" target="_blank" rel="noopener">YouTube</a></li>
+    <li><a href="https://www.tiktok.com/@rodrigomantegadj" target="_blank" rel="noopener">TikTok</a></li>
+  </ul>
+  <small>© Rodrigo Mantega DJ · São Paulo<span class="previa-rodape"> · Prévia desenvolvida pela <a href="https://rkperformance.com.br" target="_blank" rel="noopener">RK Performance</a></span></small>
+</footer>
+
+<a class="previa" href="https://rkperformance.com.br" target="_blank" rel="noopener">Prévia por <b>RK Performance</b></a>
+
+<script>
+document.documentElement.classList.add('js');
+
+// WhatsApp com mensagem pronta
+const WHATS = 'https://wa.me/5511987894556?text=' + encodeURIComponent('Olá, Rodrigo! Vi seu site e quero saber da sua disponibilidade para a minha data.');
+document.querySelectorAll('[data-whats]').forEach(a => { a.href = WHATS; a.target = '_blank'; a.rel = 'noopener'; });
+
+// topo sólido depois da abertura
+const topo = document.getElementById('topo');
+const marcaTopo = () => topo.classList.toggle('solido', scrollY > innerHeight * 0.6);
+addEventListener('scroll', marcaTopo, { passive: true }); marcaTopo();
+
+// revelação ao rolar
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// vídeos em loop só tocam quando estão na tela
+const loops = new IntersectionObserver(es => es.forEach(e => {
+  const v = e.target;
+  if (v.closest('.tocando')) return;
+  if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(() => {}); } else v.pause();
+}), { threshold: 0.2 });
+document.querySelectorAll('.quadro video').forEach(v => loops.observe(v));
+
+// tocar a versão com som dentro do próprio quadro (um por vez)
+let atual = null;
+function fecha(q) {
+  const v = q.querySelector('video');
+  v.src = q.dataset.loop; v.muted = true; v.loop = true; v.controls = false;
+  q.classList.remove('tocando'); v.play().catch(() => {});
+  if (atual === q) atual = null;
+}
+document.querySelectorAll('.quadro[data-cheio]').forEach(q => {
+  const v = q.querySelector('video');
+  q.dataset.loop = v.getAttribute('src');
+  q.querySelector('.play').addEventListener('click', () => {
+    if (atual && atual !== q) fecha(atual);
+    atual = q;
+    q.classList.add('tocando');
+    v.src = q.dataset.cheio; v.loop = false; v.muted = false; v.controls = true;
+    v.play().catch(() => {});
+  });
+  q.querySelector('.fechar').addEventListener('click', () => fecha(q));
+  v.addEventListener('ended', () => { if (q.classList.contains('tocando')) fecha(q); });
+});
+addEventListener('keydown', e => { if (e.key === 'Escape' && atual) fecha(atual); });
+
+// letreiro: anda sempre via requestAnimationFrame (não depende de @keyframes nem do
+// "reduzir animações" do sistema) e acelera quando a pessoa rola a página
+const faixa = document.getElementById('faixa');
+faixa.innerHTML += faixa.innerHTML;
+let x = 0, extra = 0, ultimoY = scrollY, antes = performance.now();
+const BASE = 55; // px por segundo
+addEventListener('scroll', () => { extra = Math.min(extra + Math.abs(scrollY - ultimoY) * 6, 900); ultimoY = scrollY; }, { passive: true });
+(function anda(agora) {
+  const dt = Math.min((agora - antes) / 1000, 0.05) || 0;
+  antes = agora;
+  x -= (BASE + extra) * dt;
+  extra *= 0.94;
+  const meio = faixa.scrollWidth / 2;
+  if (meio > 0 && -x >= meio) x += meio;
+  faixa.style.transform = `translate3d(${x}px,0,0)`;
+  requestAnimationFrame(anda);
+})(performance.now());
+</script>
+</body>
+</html>
