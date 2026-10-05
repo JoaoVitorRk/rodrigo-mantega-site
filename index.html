@@ -91,16 +91,20 @@ b.hl{font-weight:650;color:var(--gold);letter-spacing:.04em;text-transform:upper
 .quadro.f{aspect-ratio:4/5}
 .quadro video,.quadro img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .quadro:hover img{transform:scale(1.04)}
+.quadro video{pointer-events:none}
+video::-webkit-media-controls,video::-webkit-media-controls-panel,video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none;opacity:0}
+.som{position:absolute;top:14px;right:14px;z-index:3;display:flex;align-items:center;gap:8px;border-radius:999px;
+  background:rgba(10,18,27,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 14px 8px 11px;
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(218,165,64,.5);transition:background .3s,color .3s}
+.som:hover{background:var(--gold);color:var(--bg)}
+.som svg{width:17px;height:17px}
+.som .alto,.som[aria-pressed="true"] .mudo{display:none}
+.som[aria-pressed="true"] .alto{display:block}
+.som[aria-pressed="true"]{background:var(--gold);color:var(--bg);border-color:var(--gold)}
 .quadro .leg{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:12px;letter-spacing:.06em;
   background:linear-gradient(transparent,rgba(5,10,16,.85));pointer-events:none}
 .quadro .leg b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:17px;letter-spacing:0}
-.play{position:absolute;top:14px;right:14px;z-index:3;display:flex;align-items:center;gap:8px;border-radius:999px;
-  background:rgba(10,18,27,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 14px 8px 10px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(218,165,64,.5);transition:background .3s}
-.play:hover{background:var(--gold);color:var(--bg)}
-.play svg{width:16px;height:16px}
-.quadro.tocando .leg,.quadro.tocando .play{display:none}
-.fechar{position:absolute;top:12px;right:12px;z-index:4;width:38px;height:38px;border-radius:50%;background:rgba(10,18,27,.8);border:1px solid var(--line);display:none;place-items:center;font-size:18px}
-.quadro.tocando .fechar{display:grid}
 
 /* letreiro */
 .letreiro{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
@@ -199,8 +203,11 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
 .js .abertura .texto > *{opacity:0;transform:translateY(18px);animation:entra 1s cubic-bezier(.2,.7,.2,1) forwards}
 .js .abertura .texto > :nth-child(2){animation-delay:.12s}.js .abertura .texto > :nth-child(3){animation-delay:.24s}
 .js .abertura .texto > :nth-child(4){animation-delay:.36s}.js .abertura .texto > :nth-child(5){animation-delay:.48s}
-.js .abertura .palco{opacity:0;animation:entra 1.4s .2s cubic-bezier(.2,.7,.2,1) forwards}
+/* o vídeo da abertura nunca começa com opacity 0: o Safari do iPhone não dá autoplay em vídeo "invisível" */
+.js .abertura .palco{animation:sobe 1.4s .1s cubic-bezier(.2,.7,.2,1) both}
 @keyframes entra{to{opacity:1;transform:none}}
+@keyframes sobe{from{transform:translateY(24px) scale(.985)}to{transform:none}}
+
 
 /* celular */
 @media (max-width:900px){
@@ -209,7 +216,7 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
   .abertura .palco .quadro{border-radius:0}
   .abertura .palco .quadro::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,27,.55) 0,rgba(10,18,27,0) 26%,rgba(10,18,27,.15) 45%,rgba(10,18,27,.92) 78%,var(--bg) 100%)}
   .abertura .palco .foto-sobre{display:none}
-  .abertura .palco .play{top:auto;bottom:calc(100% - 128px);right:var(--pad)}
+  .abertura .palco .som{top:auto;bottom:calc(100% - 128px);right:var(--pad)}
   .abertura .texto{padding:0 var(--pad) 34px}
   .abertura .nome{width:min(250px,70%);margin-bottom:14px}
   .abertura .kicker{font-size:10.5px;letter-spacing:.16em;margin-bottom:12px}
@@ -223,7 +230,9 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
   .previa-rodape{display:inline}
   .quadro .leg{padding:30px 10px 10px;font-size:10.5px;letter-spacing:.03em;line-height:1.35}
   .quadro .leg b{font-size:14px}
-  .play{top:10px;right:10px;padding:6px 10px 6px 8px;font-size:10px}
+  .som{top:10px;right:10px;padding:6px 10px 6px 8px;font-size:10px}
+  .som svg{width:15px;height:15px}
+  .abertura .palco .som{padding:8px 14px 8px 11px;font-size:11px}
   .rotulo{margin-bottom:20px}
   .lineup{font-size:17px}
   .bloco,.bloco.inverso{grid-template-columns:1fr;gap:34px}
@@ -275,9 +284,8 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
   </div>
   <div class="palco">
     <div class="quadro" data-cheio="media/videos/filme-abertura.mp4">
-      <video src="media/videos/abertura.mp4" poster="media/videos/abertura.jpg" autoplay muted loop playsinline preload="auto" aria-label="Trechos de casamentos com Rodrigo Mantega na pista"></video>
-      <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Assistir com som</button>
-      <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+      <video src="media/videos/abertura.mp4" poster="media/videos/abertura.jpg" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-label="Trechos de casamentos com Rodrigo Mantega na pista"></video>
+      <button class="som" type="button" aria-pressed="false"><svg class="mudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></svg><svg class="alto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ativar som</span></button>
     </div>
     <figure class="foto-sobre"><img src="media/fotos/smoking-cabine.jpg" alt="Rodrigo Mantega de smoking na cabine de DJ" loading="lazy"></figure>
   </div>
@@ -315,13 +323,12 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
     </div>
     <div class="midias">
       <div class="quadro v rv" data-cheio="media/videos/filme-marcella-rafa.mp4">
-        <video src="media/videos/casamento-pista.mp4" poster="media/videos/casamento-pista.jpg" muted loop playsinline preload="none" aria-label="Casamento de Marcella e Rafa"></video>
-        <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver o filme</button>
-        <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+        <video src="media/videos/casamento-pista.mp4" poster="media/videos/casamento-pista.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Casamento de Marcella e Rafa"></video>
+        <button class="som" type="button" aria-pressed="false"><svg class="mudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></svg><svg class="alto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ativar som</span></button>
         <p class="leg"><b>Marcella &amp; Rafa</b>A Quinta das Amoreiras · filme de João Tonsig</p>
       </div>
       <div class="quadro v rv d1">
-        <video src="media/videos/casamento-bambu.mp4" poster="media/videos/casamento-bambu.jpg" muted loop playsinline preload="none" aria-label="Pista cheia no casamento de Luitha e Artur"></video>
+        <video src="media/videos/casamento-bambu.mp4" poster="media/videos/casamento-bambu.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Pista cheia no casamento de Luitha e Artur"></video>
         <p class="leg"><b>Luitha &amp; Artur</b>pré-wedding e casamento</p>
       </div>
     </div>
@@ -345,7 +352,7 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
     </div>
     <div class="midias">
       <div class="quadro v rv">
-        <video src="media/videos/destination.mp4" poster="media/videos/destination.jpg" muted loop playsinline preload="none" aria-label="Casamento brasileiro e americano"></video>
+        <video src="media/videos/destination.mp4" poster="media/videos/destination.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Casamento brasileiro e americano"></video>
         <p class="leg"><b>Brasil &amp; Estados Unidos</b>casamento bilíngue</p>
       </div>
       <figure class="quadro f rv d1"><img src="media/fotos/wedding-day.jpg" alt="Rodrigo Mantega de terno escuro num casamento ao ar livre, entre palmeiras" loading="lazy"></figure>
@@ -369,7 +376,7 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
     <div class="midias">
       <figure class="quadro f rv"><img src="media/fotos/cabine-roxa.jpg" alt="Rodrigo Mantega tocando sob luz roxa" loading="lazy"></figure>
       <div class="quadro v rv d1">
-        <video src="media/videos/pista-cheia.mp4" poster="media/videos/pista-cheia.jpg" muted loop playsinline preload="none" aria-label="Vista da cabine para uma pista lotada"></video>
+        <video src="media/videos/pista-cheia.mp4" poster="media/videos/pista-cheia.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Vista da cabine para uma pista lotada"></video>
         <p class="leg"><b>Vista da cabine</b>pista lotada</p>
       </div>
     </div>
@@ -395,30 +402,27 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
   <div class="cont">
     <div class="topo-sec rv">
       <h2 class="rotulo" id="t-fala"><span class="pre">quem contrata</span><span class="tit">Fala</span></h2>
-      <p>As mensagens chegam no dia seguinte. Toque em um vídeo para ouvir.</p>
+      <p>As mensagens chegam no dia seguinte. Ative o som para ouvir.</p>
     </div>
     <div class="celulares">
       <figure class="celular rv">
         <div class="quadro v" data-cheio="media/videos/filme-mariana-luiz.mp4">
-          <video src="media/videos/feedback-mariana.mp4" poster="media/videos/feedback-mariana.jpg" muted loop playsinline preload="none" aria-label="Mensagem da noiva Mariana sobre o casamento"></video>
-          <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ouvir</button>
-          <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+          <video src="media/videos/feedback-mariana.mp4" poster="media/videos/feedback-mariana.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Mensagem da noiva Mariana sobre o casamento"></video>
+          <button class="som" type="button" aria-pressed="false"><svg class="mudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></svg><svg class="alto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ativar som</span></button>
         </div>
         <figcaption><q>Pista LOTADA do começo ao fim. Nunca vi uma festa acabar e estar lotada ainda!</q><span>Mariana &amp; Luiz · Fazenda Santa Bárbara</span></figcaption>
       </figure>
       <figure class="celular rv d1">
         <div class="quadro v" data-cheio="media/videos/filme-yacht-club.mp4">
-          <video src="media/videos/feedback-andrew.mp4" poster="media/videos/feedback-andrew.jpg" muted loop playsinline preload="none" aria-label="Mensagem de Andrew, noivo americano"></video>
-          <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ouvir</button>
-          <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+          <video src="media/videos/feedback-andrew.mp4" poster="media/videos/feedback-andrew.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Mensagem de Andrew, noivo americano"></video>
+          <button class="som" type="button" aria-pressed="false"><svg class="mudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></svg><svg class="alto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ativar som</span></button>
         </div>
         <figcaption><q>Everyone loved your set and you carried us all the way to 4 am.</q><span>Andrew · noivo americano · Yacht Club</span></figcaption>
       </figure>
       <figure class="celular rv d2">
         <div class="quadro v" data-cheio="media/videos/filme-audio-rafa.mp4">
-          <video src="media/videos/feedback-rafa.mp4" poster="media/videos/feedback-rafa.jpg" muted loop playsinline preload="none" aria-label="Áudio do noivo Rafa Cortez agradecendo"></video>
-          <button class="play" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ouvir o áudio</button>
-          <button class="fechar" type="button" aria-label="Fechar vídeo">✕</button>
+          <video src="media/videos/feedback-rafa.mp4" poster="media/videos/feedback-rafa.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Áudio do noivo Rafa Cortez agradecendo"></video>
+          <button class="som" type="button" aria-pressed="false"><svg class="mudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></svg><svg class="alto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ativar som</span></button>
         </div>
         <figcaption><q>Foi demais! … Parabéns de coração.</q><span>Rafa Cortez · áudio do noivo</span></figcaption>
       </figure>
@@ -443,7 +447,7 @@ footer small{width:100%;color:#5f6b78;font-size:12px}
     </div>
     <div class="midias alto">
       <div class="quadro v rv">
-        <video src="media/videos/like-a-stone.mp4" poster="media/videos/like-a-stone.jpg" muted loop playsinline preload="none" aria-label="Pista cantando Like a Stone num casamento"></video>
+        <video src="media/videos/like-a-stone.mp4" poster="media/videos/like-a-stone.jpg" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Pista cantando Like a Stone num casamento"></video>
         <p class="leg"><b>“Like a Stone”</b>na hora certa</p>
       </div>
       <figure class="quadro f rv d1"><img style="object-position:50% 12%" src="media/fotos/orquideas.jpg" alt="Rodrigo Mantega de terno diante de uma parede de orquídeas brancas" loading="lazy"></figure>
@@ -522,36 +526,47 @@ addEventListener('scroll', marcaTopo, { passive: true }); marcaTopo();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-// vídeos em loop só tocam quando estão na tela
+// vídeos: sempre mudos e em loop, sem controles. Tocam quando estão na tela.
+const videos = [...document.querySelectorAll('.quadro video')];
+videos.forEach(v => { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true; v.controls = false; });
+const tenta = v => { if (v.paused) v.play().catch(() => {}); };
+const naTela = v => { const r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
 const loops = new IntersectionObserver(es => es.forEach(e => {
   const v = e.target;
-  if (v.closest('.tocando')) return;
-  if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(() => {}); } else v.pause();
+  if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; tenta(v); }
+  else { v.pause(); const q = v.closest('.quadro'); if (q && q === comSom) silencia(q); }
 }), { threshold: 0.2 });
-document.querySelectorAll('.quadro video').forEach(v => loops.observe(v));
+videos.forEach(v => loops.observe(v));
+// abertura: insiste no autoplay quando o vídeo fica pronto ou a aba volta
+const heroi = document.querySelector('.abertura video');
+['loadeddata', 'canplay'].forEach(ev => heroi.addEventListener(ev, () => tenta(heroi)));
+document.addEventListener('visibilitychange', () => { if (!document.hidden) tenta(heroi); });
+tenta(heroi);
+// iPhone em modo economia de bateria bloqueia autoplay: o primeiro toque na página libera
+const destrava = () => videos.forEach(v => { if (naTela(v)) tenta(v); });
+['touchstart', 'touchend', 'click'].forEach(ev => addEventListener(ev, destrava, { passive: true }));
 
-// tocar a versão com som dentro do próprio quadro (um por vez)
-let atual = null;
-function fecha(q) {
-  const v = q.querySelector('video');
-  v.src = q.dataset.loop; v.muted = true; v.loop = true; v.controls = false;
-  q.classList.remove('tocando'); v.play().catch(() => {});
-  if (atual === q) atual = null;
+// único botão de cada vídeo: ativar/desativar som (um vídeo com som por vez).
+// Se o quadro tem versão completa (data-cheio), ela entra no lugar do trecho ao ativar o som.
+let comSom = null;
+function marca(q, ligado) {
+  const b = q.querySelector('.som');
+  b.setAttribute('aria-pressed', ligado ? 'true' : 'false');
+  b.querySelector('span').textContent = ligado ? 'Desativar som' : 'Ativar som';
 }
-document.querySelectorAll('.quadro[data-cheio]').forEach(q => {
+function silencia(q) { q.querySelector('video').muted = true; marca(q, false); if (comSom === q) comSom = null; }
+function ligaSom(q) {
+  if (comSom && comSom !== q) silencia(comSom);
   const v = q.querySelector('video');
-  q.dataset.loop = v.getAttribute('src');
-  q.querySelector('.play').addEventListener('click', () => {
-    if (atual && atual !== q) fecha(atual);
-    atual = q;
-    q.classList.add('tocando');
-    v.src = q.dataset.cheio; v.loop = false; v.muted = false; v.controls = true;
-    v.play().catch(() => {});
-  });
-  q.querySelector('.fechar').addEventListener('click', () => fecha(q));
-  v.addEventListener('ended', () => { if (q.classList.contains('tocando')) fecha(q); });
+  if (q.dataset.cheio && !q.dataset.trocado) { v.src = q.dataset.cheio; q.dataset.trocado = '1'; v.loop = true; }
+  v.muted = false;
+  v.play().then(() => { comSom = q; marca(q, true); }).catch(() => { v.muted = true; marca(q, false); });
+  comSom = q; marca(q, true);
+}
+document.querySelectorAll('.quadro .som').forEach(b => {
+  const q = b.closest('.quadro');
+  b.addEventListener('click', e => { e.stopPropagation(); q.querySelector('video').muted ? ligaSom(q) : silencia(q); });
 });
-addEventListener('keydown', e => { if (e.key === 'Escape' && atual) fecha(atual); });
 
 // letreiro: anda sempre via requestAnimationFrame (não depende de @keyframes nem do
 // "reduzir animações" do sistema) e acelera quando a pessoa rola a página
